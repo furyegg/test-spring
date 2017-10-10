@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Spring MVC Example</title>
+    <style type="text/css">
+        body {
+            background-image: url('@{images/bg.png}');
+        }
+    </style>
+</head>
+<body>
+<p th:utext="${message}"/>
+<br/>
+User: <span sec:authentication="name"></span> |
+Roles: <span sec:authentication="principal.authorities"></span>
+<div>
+	Add Comment:
+	<form th:action="@{/addComment}" method="post">
+		<input type="text" name="comment"/>
+		<input type="submit" value="Submit" />
+	</form>
+	<hr/>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Logout" />
+	</form>
+</div>
+<br>
+<br>
+
+</body>
+</html>
