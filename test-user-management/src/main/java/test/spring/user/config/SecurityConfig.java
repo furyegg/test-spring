@@ -17,7 +17,7 @@ package test.spring.user.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
-import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -48,13 +48,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		auth
 			.inMemoryAuthentication()
 				.withUser("user").password("password").roles("USER");
-	}
-	
-	@Bean
-	public ServletWebServerFactory servletContainer() {
-		TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
-//		tomcat.addAdditionalTomcatConnectors(createConnector());
-		return tomcat;
 	}
 	// @formatter:on
 }

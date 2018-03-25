@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//172.20.20.49:1521/ora12c
+    username: SCHD1_DMP
+    password: password
+    driverClassName: oracle.jdbc.OracleDriver
