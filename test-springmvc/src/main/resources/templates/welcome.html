@@ -3,7 +3,7 @@
     <title>Spring MVC Example</title>
     <style type="text/css">
         body {
-            background-image: url('@{images/bg.png}');
+            background-image: url([[@{images/bg.png}]]);
         }
     </style>
 </head>
@@ -22,6 +22,7 @@ Roles: <span sec:authentication="principal.authorities"></span>
 	<form th:action="@{/logout}" method="post">
 		<input type="submit" value="Logout" />
 	</form>
+	<a th:href="@{/about}">About</a>
 </div>
 <br>
 <br>

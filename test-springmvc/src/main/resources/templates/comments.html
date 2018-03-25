@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Comments</title>
+</head>
+<body>
+<h1>Comments</h1>
+<a th:href="@{/welcome}">Back</a>
+<table>
+	<tr th:each="comm : ${#session.getAttribute('comments')}">
+		<td th:text="${comm}"></td>
+	</tr>
+</table>
+</body>
+</html>
